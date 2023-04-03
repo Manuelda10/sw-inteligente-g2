@@ -22,7 +22,7 @@
       <section class="textos-header">
         <h1>PELÍCULAS PARA TODOS LOS GUSTOS</h1>
         <h2>Consulta con nuestro chatbot:</h2>
-        <button class="btn-open-chat">
+        <button id="botonchat" class="btn-open-chat">
           Abrir bot
           <svg
             class="svg-bot"
@@ -41,6 +41,7 @@
         </button>
       </section>
     </header>
+
     <div class="overlay" id="overlay">
       <div class="popup" id="popup">
         <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"
@@ -56,24 +57,29 @@
         <div class="linea"></div>
       </div>
     </div>
-    <script>
-      window.watsonAssistantChatOptions = {
-        integrationID: 'edc608fb-07c6-4d03-8c3d-7390bba57107', // The ID of this integration.
-        region: 'au-syd', // The region your integration is hosted in.
-        serviceInstanceID: '0a689c09-66dd-4795-b6c9-6622ad9336bc', // The ID of your service instance.
-        onLoad: function (instance) {
-          instance.render();
-        },
-      };
 
-      setTimeout(function () {
-        const t = document.createElement('script');
-        t.src =
-          'https://web-chat.global.assistant.watson.appdomain.cloud/versions/' +
-          (window.watsonAssistantChatOptions.clientVersion || 'latest') +
-          '/WatsonAssistantChatEntry.js';
-        document.head.appendChild(t);
-      });
+   
+    
+    <script>
+    
+        window.watsonAssistantChatOptions = {
+          integrationID: 'edc608fb-07c6-4d03-8c3d-7390bba57107', // The ID of this integration.
+          region: 'au-syd', // The region your integration is hosted in.
+          serviceInstanceID: '0a689c09-66dd-4795-b6c9-6622ad9336bc', // The ID of your service instance.
+          onLoad: function (instance) {
+            instance.render();
+          },
+        };
+
+        setTimeout(function () {
+          const t = document.createElement('script');
+          t.src =
+            'https://web-chat.global.assistant.watson.appdomain.cloud/versions/' +
+            (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+            '/WatsonAssistantChatEntry.js';
+          document.head.appendChild(t);
+        });
+      
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
@@ -89,6 +95,27 @@
       src="https://kit.fontawesome.com/25c61e9263.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" 
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" 
+    crossorigin="anonymous"></script>
     <script src="pop.js"></script>
+    
+    <script>
+      const boton1 = document.getElementById('botonchat');
+      
+      boton1.addEventListener('click', function() {
+        // Hacer clic en el botón 2
+        const boton2 = document.getElementById('WACLauncher__Button');
+        boton2.click();
+      });
+    </script>
   </body>
+  <footer>
+    <div class="text-center">
+      <!-- <i class="fa fa-copyright icon-bottom" aria-hidden="true"></i> -->
+      <span class="ecommerce-footer-section-copyright">
+          G2 - Software Inteligente UNMSM
+      </span>
+  </div>
+  </footer>
 </html>
